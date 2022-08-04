@@ -37,6 +37,6 @@ except TimeoutException:
 
 time.sleep(10)
 #elements = driver.find_elements_by_xpath(XPATH)
-elements = driver.find_element(By.XPATH, XPATH)
-st.write([el.text for el in elements])
+elements = driver.find_element(By.XPATH, XPATH).getAttribute("innerText")
+st.write(elements)
 driver.quit()
