@@ -10,8 +10,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.firefox import GeckoDriverManager
 
-URL = "https://www.terra.com.br/esportes/futebol"
-XPATH = "/html/body/div[4]/ul/li[2]/a"
+URL = "https://www.unibet.fr/sport/football/europa-league/europa-league-matchs"
+XPATH = "//*[@class='ui-mainview-block eventpath-wrapper']"
 TIMEOUT = 20
 
 st.title("Test Selenium")
@@ -36,6 +36,7 @@ except TimeoutException:
     driver.quit()
 
 time.sleep(10)
-elements = driver.find_elements_by_xpath(XPATH)
+#elements = driver.find_elements_by_xpath(XPATH)
+elements = driver.find_element(By.XPATH, XPATH)
 st.write([el.text for el in elements])
 driver.quit()
